@@ -15,7 +15,6 @@ namespace DEPI.DAL.Configurations
         {
             builder
                 .Property(c => c.CourseName)
-                .IsRequired()
                 .HasMaxLength(20);
         }
     }

@@ -10,6 +10,6 @@ namespace DEPI.DAL.Repository.StudentRepo
 {
     public interface IStudentRepository : IGenericRepository<Student>
     {
-
+        public Student GetStudentByEmail(string email);
     }
 }

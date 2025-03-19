@@ -1,6 +1,8 @@
+using DEPI.BLL.Services.InstructorService;
 using DEPI.BLL.Services.StudentService;
 using DEPI.DAL.Database;
 using DEPI.DAL.Repository.GenericRepository;
+using DEPI.DAL.Repository.InstructorRepo;
 using DEPI.DAL.Repository.StudentRepo;
 using Microsoft.EntityFrameworkCore;
 
@@ -28,6 +30,8 @@ namespace DEPI.API
             builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));//must include it in case applying Generic repository
             builder.Services.AddScoped<IStudentService, StudentService>();
             builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+            builder.Services.AddScoped<IInstructorService, InstructorService>();
+            builder.Services.AddScoped<IInstructorRepository, InstructorRepository>();
 
             var app = builder.Build();
 

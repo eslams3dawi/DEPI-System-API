@@ -15,15 +15,16 @@ namespace DEPI.DAL.Configurations
         {
             builder
                 .Property(s => s.FirstName)
-                .IsRequired()
                 .HasMaxLength(20);
             builder
                 .Property(s => s.LastName)
-                .IsRequired()
                 .HasMaxLength(25);
             builder
                 .Property(s => s.Age)
                 .HasComputedColumnSql("DATEDIFF(YEAR, DateOfBirth, GETDATE())");
+            builder
+                .Property(s => s.Phone)
+                .HasMaxLength(11);
         }
     }
 }

@@ -44,7 +44,8 @@ namespace DEPI.BLL.Services.StudentService
                 LastName = s.LastName,
                 Age = s.Age,
                 Email = s.Email,
-                Phone = s.Phone
+                Phone = s.Phone,
+                PerformanceRate = s.PerformanceRate
             }).ToList();
             return studentDTOs;
         }
@@ -60,7 +61,8 @@ namespace DEPI.BLL.Services.StudentService
                 LastName = studentModel.LastName,
                 Age = studentModel.Age,
                 Email = studentModel.Email,
-                Phone = studentModel.Phone
+                Phone = studentModel.Phone,
+                PerformanceRate = studentModel.PerformanceRate
             };
 
             return studentDTO;
@@ -71,9 +73,9 @@ namespace DEPI.BLL.Services.StudentService
 
             studentModel.FirstName = student.FirstName;
             studentModel.LastName = student.LastName;
-            studentModel.Age = student.Age;
             studentModel.Email = student.Email;
             studentModel.Phone = student.Phone;
+            studentModel.PerformanceRate = student.PerformanceRate;
 
             _studentRepository.Update(studentModel);
         }
@@ -81,6 +83,21 @@ namespace DEPI.BLL.Services.StudentService
         {
             var studentModel = _studentRepository.GetById(id);
             _studentRepository.Delete(studentModel);
+        }
+
+        public StudentReadDTO GetStudentByEmail(string email)
+        {
+            var studentModel = _studentRepository.GetStudentByEmail(email);
+            var studentDTO = new StudentReadDTO()
+            {
+                Id = studentModel.Id,
+                FirstName = studentModel.FirstName,
+                LastName = studentModel.LastName,
+                Age = studentModel.Age,
+                Email = studentModel.Email,
+                Phone = studentModel.Phone,
+            };
+            return studentDTO;
         }
     }
 }

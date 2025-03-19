@@ -12,6 +12,7 @@ namespace DEPI.BLL.Services.StudentService
         public void Add(StudentAddDTO student);
         public IEnumerable<StudentReadDTO> GetAll();
         public StudentReadDTO GetById(int id);
+        public StudentReadDTO GetStudentByEmail(string email);
         public void Update(int id, StudentUpdateDTO student);
         public void Delete(int id);
     }

@@ -14,6 +14,6 @@ namespace DEPI.BLL.DTOs.StudentDTO
         public int Age { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
-        public bool PerformanceRate { get; set; }
+        public int PerformanceRate { get; set; }
     }
 }

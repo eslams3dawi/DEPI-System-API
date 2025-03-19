@@ -35,18 +35,22 @@ namespace DEPI.API.Controllers
         [HttpPut("{id}")]
         public ActionResult Update(int id, StudentUpdateDTO student)
         {
-            if(id != student.Id)
+            if (id != student.Id)
                 return BadRequest();
 
             _studentService.Update(id, student);
             return NoContent();
         }
-        [HttpDelete("{id}")]
+        [HttpDelete("{id:int}")]
         public ActionResult Delete(int id)
         {
             _studentService.Delete(id);
             return NoContent();
         }
-
+        [HttpGet("by-email/{email}")]
+        public ActionResult GetStudentByEmail(string email)
+        {
+            return Ok(_studentService.GetStudentByEmail(email));
+        }
     }
 }

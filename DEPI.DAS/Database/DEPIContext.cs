@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DEPI.DAL.Models;
+using DEPI.DAL.Configurations;
 
 namespace DEPI.DAL.Database
 {
@@ -19,6 +20,10 @@ namespace DEPI.DAL.Database
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new StudentConfigurations());
+            modelBuilder.ApplyConfiguration(new InstructorConfigurations());
+            modelBuilder.ApplyConfiguration(new CourseConfigurations());
+
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<Course> Courses { get; set; }
