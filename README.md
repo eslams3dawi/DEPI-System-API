@@ -8,8 +8,6 @@ The **DEPI System API** is a backend service designed to manage DEPI operations 
 - **Generic Repository Pattern**: Promotes reusability and clean data access.
 - **RESTful APIs**: Standardized communication between client and server.
 - **Entity Management**: Handles entities like Students, Groups, Instructors, Courses, Tracks, and Fields.
-- **Authentication & Authorization** (Planned): Secure API endpoints using JWT.
-- **Logging & Exception Handling**: Ensures debugging and stability.
 - **Database Integration**: Supports SQL-based databases (e.g., SQL Server, PostgreSQL).
 
 ## Technologies Used
